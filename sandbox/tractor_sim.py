@@ -21,7 +21,7 @@ def simulate_tractor_game(total_decks: int, players: int, bottom_cards: int,
     are found in ONE specific player's hand (e.g., player 0).
     """
     full_deck = build_deck(total_decks)
-    print(f"full_deck: {full_deck}")
+    # print(f"full_deck: {full_deck}")
     
     # We are looking for these exact string representations in the player's hand
     target_cards = [f"{rank} of {suit}" for rank in ranks_needed]
@@ -42,6 +42,9 @@ def simulate_tractor_game(total_decks: int, players: int, bottom_cards: int,
         # Simulating dealing cards: Player 0 gets the first `cards_dealt_per_player` cards
         player_0_hand = deck_copy[:cards_dealt_per_player]
         
+        # Count occurrences of each card in the hand.
+        # .get(card, 0) retrieves the current count of the card from the dictionary;
+        # if the card is not yet a key, it returns the default value 0.
         hand_counts = {}
         for card in player_0_hand:
             hand_counts[card] = hand_counts.get(card, 0) + 1
