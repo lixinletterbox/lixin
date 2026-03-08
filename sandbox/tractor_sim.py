@@ -21,6 +21,7 @@ def simulate_tractor_game(total_decks: int, players: int, bottom_cards: int,
     are found in ONE specific player's hand (e.g., player 0).
     """
     full_deck = build_deck(total_decks)
+    print(f"full_deck: {full_deck}")
     
     # We are looking for these exact string representations in the player's hand
     target_cards = [f"{rank} of {suit}" for rank in ranks_needed]
